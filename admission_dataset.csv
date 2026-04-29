@@ -1,0 +1,148 @@
+age,gender,marks_10,marks_12,entrance_score,preferred_course,admitted,recommended_course
+20,Male,65.2,96.3,78.6,Artificial Intelligence and Machine Learning,1,Artificial Intelligence and Machine Learning
+19,Other,53.4,48.1,89.3,Business Administration,0,Not Admitted
+17,Male,48.0,84.0,95.1,Computer Science,1,Computer Science
+16,Other,61.4,73.3,54.6,Electronics,1,Business Administration
+21,Female,66.6,47.5,97.9,Business Administration,1,Business Administration
+18,Male,55.8,72.8,67.4,Electronics,1,Business Administration
+16,Female,81.7,69.3,21.1,Mechanical Engineering,0,Not Admitted
+19,Other,65.8,45.9,38.5,Civil Engineering,0,Not Admitted
+21,Male,51.6,71.7,22.8,Civil Engineering,0,Not Admitted
+21,Female,54.8,85.8,54.0,Civil Engineering,1,Business Administration
+17,Female,55.0,97.4,82.0,Business Administration,1,Computer Science
+21,Other,95.0,84.3,46.1,Civil Engineering,1,Business Administration
+17,Other,47.4,62.6,51.1,Biotechnology,1,Business Administration
+20,Male,76.7,97.1,68.6,Biotechnology,1,Electronics
+16,Other,88.3,49.0,99.0,Electronics,1,Business Administration
+18,Male,55.7,83.4,83.2,Mechanical Engineering,1,Computer Science
+20,Male,65.2,96.3,78.6,Artificial Intelligence and Machine Learning,1,Artificial Intelligence and Machine Learning18,Female,48.4,61.8,46.0,Electronics,1,Business Administration
+18,Male,75.3,65.7,97.7,Biotechnology,1,Civil Engineering
+16,Other,75.3,86.6,59.5,Mechanical Engineering,1,Electronics
+16,Male,46.4,50.8,22.5,Civil Engineering,0,Not Admitted
+18,Male,94.0,58.5,52.8,Civil Engineering,1,Business Administration
+19,Female,95.9,77.3,75.6,Mechanical Engineering,1,Electronics
+19,Female,88.6,79.2,89.7,Business Administration,1,Electronics
+21,Male,74.1,88.6,91.7,Computer Science,1,Computer Science
+16,Other,57.3,68.1,85.4,Business Administration,1,Business Administration
+18,Female,72.6,67.5,37.8,Civil Engineering,0,Not Admitted
+16,Male,58.2,54.1,37.5,Business Administration,0,Not Admitted
+17,Other,97.5,97.0,40.1,Computer Science,0,Not Admitted
+17,Female,53.0,98.9,41.3,Civil Engineering,0,Not Admitted
+18,Female,47.8,60.0,92.7,Mechanical Engineering,0,Not Admitted
+19,Other,73.7,69.2,64.2,Electronics,1,Civil Engineering
+20,Female,65.0,58.1,84.3,Business Administration,1,Business Administration
+16,Other,66.5,89.1,83.9,Business Administration,1,Computer Science
+19,Other,82.6,91.4,46.1,Mechanical Engineering,1,Business Administration
+19,Male,72.7,57.2,71.6,Computer Science,1,Business Administration
+18,Male,66.5,73.0,87.0,Computer Science,1,Mechanical Engineering
+19,Female,56.3,74.2,75.7,Computer Science,1,Mechanical Engineering
+21,Male,72.9,59.1,99.7,Biotechnology,1,Business Administration
+18,Other,92.7,55.2,42.3,Civil Engineering,0,Not Admitted
+18,Male,92.9,87.1,71.4,Civil Engineering,1,Electronics
+21,Male,93.5,77.7,20.7,Electronics,0,Not Admitted
+17,Female,97.6,60.3,44.4,Electronics,0,Not Admitted
+16,Female,80.2,57.1,77.0,Biotechnology,1,Business Administration
+18,Male,54.7,64.8,79.5,Computer Science,1,Business Administration
+21,Female,74.3,72.5,70.9,Business Administration,1,Mechanical Engineering
+18,Other,97.5,66.2,91.4,Mechanical Engineering,1,Civil Engineering
+16,Male,63.9,79.8,73.5,Civil Engineering,1,Electronics
+16,Male,84.0,60.2,21.9,Civil Engineering,0,Not Admitted
+18,Male,95.8,96.5,93.2,Biotechnology,1,Computer Science
+18,Male,95.1,68.1,97.3,Civil Engineering,1,Civil Engineering
+18,Female,60.9,65.8,88.1,Computer Science,1,Business Administration
+21,Female,66.3,90.6,94.4,Business Administration,1,Computer Science
+17,Male,64.4,58.7,43.6,Computer Science,0,Not Admitted
+17,Other,52.4,83.3,64.2,Mechanical Engineering,1,Electronics
+17,Other,88.7,91.8,93.1,Computer Science,1,Computer Science
+21,Female,78.9,55.5,25.7,Civil Engineering,0,Not Admitted
+21,Other,92.9,46.5,66.3,Computer Science,1,Business Administration
+20,Male,65.2,96.3,78.6,Artificial Intelligence and Machine Learning,1,Artificial Intelligence and Machine Learning19,Male,47.0,89.4,48.8,Computer Science,1,Business Administration
+19,Female,89.7,59.7,97.2,Biotechnology,1,Business Administration
+19,Male,55.5,67.2,76.0,Mechanical Engineering,1,Business Administration
+18,Female,72.9,62.4,83.6,Mechanical Engineering,1,Biotechnology
+16,Male,46.4,97.0,86.9,Computer Science,1,Computer Science
+21,Female,54.4,53.4,40.0,Computer Science,0,Not Admitted
+20,Female,80.7,60.1,96.4,Biotechnology,1,Biotechnology
+20,Female,67.7,58.4,48.5,Computer Science,1,Business Administration
+21,Female,63.5,50.0,27.5,Business Administration,0,Not Admitted
+20,Other,83.0,70.6,27.8,Civil Engineering,0,Not Admitted
+17,Female,54.4,68.4,51.9,Biotechnology,1,Business Administration
+18,Female,92.9,59.1,21.2,Computer Science,0,Not Admitted
+17,Male,74.1,81.9,69.3,Civil Engineering,1,Electronics
+17,Other,76.6,95.8,66.0,Civil Engineering,1,Electronics
+19,Other,51.9,88.8,85.7,Computer Science,1,Computer Science
+20,Other,96.9,93.9,35.7,Business Administration,0,Not Admitted
+16,Female,46.0,50.1,74.6,Biotechnology,0,Not Admitted
+16,Other,90.6,46.3,85.2,Civil Engineering,1,Business Administration
+19,Male,82.4,63.8,94.9,Biotechnology,1,Biotechnology
+20,Male,65.2,96.3,78.6,Artificial Intelligence and Machine Learning,1,Artificial Intelligence and Machine Learning21,Male,67.3,65.1,82.1,Civil Engineering,1,Civil Engineering
+16,Female,68.2,85.5,80.4,Computer Science,1,Computer Science
+20,Other,73.9,71.8,51.2,Electronics,1,Business Administration
+19,Male,66.0,45.6,92.4,Civil Engineering,1,Business Administration
+20,Male,96.3,96.3,65.9,Electronics,1,Electronics
+20,Other,77.5,74.9,37.0,Computer Science,0,Not Admitted
+21,Other,51.1,95.3,97.9,Mechanical Engineering,1,Computer Science
+17,Other,68.8,92.9,48.1,Civil Engineering,1,Business Administration
+21,Other,82.2,90.2,89.3,Business Administration,1,Computer Science
+17,Female,82.9,48.9,85.7,Biotechnology,1,Business Administration
+20,Male,72.7,57.6,66.5,Business Administration,1,Business Administration
+19,Female,88.9,96.2,98.9,Civil Engineering,1,Computer Science
+18,Female,49.5,87.0,64.7,Mechanical Engineering,1,Electronics
+17,Female,62.8,68.5,40.3,Mechanical Engineering,0,Not Admitted
+16,Other,85.0,86.4,85.8,Biotechnology,1,Computer Science
+16,Male,57.8,66.6,58.2,Business Administration,1,Business Administration
+20,Male,68.6,88.3,98.2,Biotechnology,1,Computer Science
+19,Other,47.3,94.9,93.5,Electronics,1,Computer Science
+21,Other,97.3,73.2,70.4,Computer Science,1,Mechanical Engineering
+16,Other,78.9,76.6,92.1,Civil Engineering,1,Electronics
+19,Male,96.8,48.1,51.6,Mechanical Engineering,1,Business Administration
+17,Male,55.2,70.0,48.3,Computer Science,1,Business Administration
+16,Male,59.0,69.5,22.6,Biotechnology,0,Not Admitted
+21,Other,88.9,82.0,33.0,Biotechnology,0,Not Admitted
+16,Female,95.8,67.5,66.5,Mechanical Engineering,1,Civil Engineering
+16,Female,95.4,91.8,23.6,Computer Science,0,Not Admitted
+17,Other,70.9,98.2,50.1,Computer Science,1,Business Administration
+17,Male,97.4,90.5,87.1,Electronics,1,Computer Science
+19,Male,52.2,45.7,26.0,Biotechnology,0,Not Admitted
+20,Male,99.0,98.8,64.4,Biotechnology,1,Electronics
+16,Female,85.9,65.4,39.3,Computer Science,0,Not Admitted
+16,Female,96.5,77.7,38.3,Civil Engineering,0,Not Admitted
+21,Female,59.5,46.2,59.9,Electronics,0,Not Admitted
+20,Female,73.1,91.0,64.2,Business Administration,1,Electronics
+20,Male,87.8,76.9,58.4,Business Administration,1,Electronics
+19,Female,83.0,56.5,30.9,Business Administration,0,Not Admitted
+18,Other,77.8,79.4,64.4,Mechanical Engineering,1,Electronics
+19,Female,63.8,72.8,82.7,Mechanical Engineering,1,Mechanical Engineering
+16,Female,91.6,96.3,31.8,Computer Science,0,Not Admitted
+20,Female,58.9,69.8,98.4,Biotechnology,1,Business Administration
+16,Other,56.3,76.3,47.3,Electronics,1,Business Administration
+16,Other,52.5,79.6,34.6,Electronics,0,Not Admitted
+18,Other,72.8,97.5,68.2,Biotechnology,1,Electronics
+20,Female,54.1,60.0,34.2,Computer Science,0,Not Admitted
+16,Female,73.9,64.2,91.5,Mechanical Engineering,1,Biotechnology
+16,Female,82.3,47.1,84.0,Business Administration,1,Business Administration
+19,Male,53.5,65.4,20.2,Computer Science,0,Not Admitted
+21,Female,77.3,98.3,62.9,Mechanical Engineering,1,Electronics
+17,Female,86.0,73.7,77.6,Electronics,1,Mechanical Engineering
+21,Other,58.6,83.5,91.6,Civil Engineering,1,Computer Science
+16,Other,50.8,69.2,62.6,Biotechnology,1,Business Administration
+21,Female,54.8,75.5,87.3,Business Administration,1,Electronics
+19,Female,51.5,93.1,67.5,Electronics,1,Electronics
+21,Female,80.0,70.9,66.7,Computer Science,1,Mechanical Engineering
+19,Female,75.5,65.5,47.0,Mechanical Engineering,1,Business Administration
+16,Male,58.2,71.9,46.4,Biotechnology,1,Business Administration
+19,Female,50.5,53.3,39.7,Electronics,0,Not Admitted
+16,Other,49.7,88.5,24.5,Electronics,0,Not Admitted
+21,Female,73.3,67.2,98.6,Civil Engineering,1,Civil Engineering
+16,Female,97.4,91.7,85.4,Business Administration,1,Computer Science
+17,Other,81.1,95.2,64.5,Biotechnology,1,Electronics
+18,Male,86.6,55.1,45.9,Civil Engineering,1,Business Administration
+21,Male,58.1,51.2,68.8,Business Administration,0,Not Admitted
+16,Female,53.3,71.0,62.6,Mechanical Engineering,1,Business Administration
+17,Male,69.5,74.6,63.9,Mechanical Engineering,1,Mechanical Engineering
+16,Other,49.7,52.5,20.2,Business Administration,0,Not Admitted
+21,Female,67.2,63.8,94.4,Business Administration,1,Biotechnology
+18,Other,95.4,98.5,36.4,Computer Science,0,Not Admitted
+18,Male,85.0,76.0,87.3,Biotechnology,1,Electronics
+20,Other,55.9,53.8,33.1,Electronics,0,Not Admitted
+17,Male,79.2,94.0,45.3,Mechanical Engineering,1,Business Administration
