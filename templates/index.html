@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdmitIQ - AI College Admission System</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --ink:#0a0a0f;
+ --paper:#f5f2eb;
+ --gold:#c8a84b;
+ --teal:#1a6b6b;
+ --red:#c84b4b;
+ --muted:#5a5a6a;
+ --card:#ffffff;
+ --border:#e0ddd4;
+}
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+body{
+ font-family:'DM Sans',sans-serif;
+ background:var(--paper);
+ color:var(--ink);
+}
+
+/* NAVBAR */
+nav{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:20px 40px;
+ background:white;
+ border-bottom:1px solid #ddd;
+ position:sticky;
+ top:0;
+}
+
+.logo{
+ font-size:28px;
+ font-weight:bold;
+ text-decoration:none;
+ color:black;
+}
+
+.logo span{
+ color:goldenrod;
+}
+
+.nav-links{
+ display:flex;
+ gap:20px;
+ align-items:center;
+}
+
+.nav-links a{
+ text-decoration:none;
+ color:#444;
+}
+
+.btn-nav{
+ background:black;
+ color:white !important;
+ padding:10px 20px;
+ border-radius:30px;
+}
+
+/* HERO */
+.hero{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:40px;
+ padding:70px 50px;
+ align-items:center;
+}
+
+.hero-badge{
+ display:inline-block;
+ padding:8px 18px;
+ background:#fff3cd;
+ border-radius:30px;
+ margin-bottom:20px;
+ font-size:14px;
+}
+
+h1{
+ font-size:58px;
+ line-height:1.1;
+}
+
+h1 em{
+ color:teal;
+ font-style:normal;
+}
+
+.line2{
+ color:goldenrod;
+}
+
+.hero-sub{
+ margin-top:20px;
+ font-size:18px;
+ color:#666;
+ line-height:1.7;
+}
+
+.hero-cta{
+ margin-top:30px;
+ display:flex;
+ gap:15px;
+ flex-wrap:wrap;
+}
+
+.btn-primary,.btn-secondary,.btn-white{
+ text-decoration:none;
+ padding:14px 28px;
+ border-radius:30px;
+ display:inline-block;
+}
+
+.btn-primary{
+ background:black;
+ color:white;
+}
+
+.btn-secondary{
+ border:2px solid #ccc;
+ color:black;
+}
+
+.stats-strip{
+ display:flex;
+ gap:30px;
+ margin-top:40px;
+}
+
+.stat{
+ border-left:3px solid goldenrod;
+ padding-left:12px;
+}
+
+.stat-num{
+ font-size:30px;
+ font-weight:bold;
+}
+
+.stat-label{
+ color:#666;
+ font-size:14px;
+}
+
+/* RIGHT CARD */
+.hero-visual{
+ display:flex;
+ flex-direction:column;
+ gap:20px;
+}
+
+.score-card{
+ background:white;
+ border-radius:15px;
+ padding:20px;
+ box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.score-card-header{
+ display:flex;
+ justify-content:space-between;
+ margin-bottom:15px;
+}
+
+.badge-admit{
+ background:#d4f0d4;
+ color:green;
+ padding:5px 10px;
+ border-radius:20px;
+ font-size:13px;
+}
+
+.badge-reject{
+ background:#f0d4d4;
+ color:red;
+ padding:5px 10px;
+ border-radius:20px;
+ font-size:13px;
+}
+
+.score-bar-row{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ margin-bottom:10px;
+ font-size:14px;
+}
+
+.score-bar-label{
+ width:100px;
+}
+
+.score-bar-track{
+ flex:1;
+ background:#eee;
+ height:8px;
+ border-radius:10px;
+ overflow:hidden;
+}
+
+.score-bar-fill{
+ height:100%;
+}
+
+.fill-teal{background:teal;}
+.fill-red{background:red;}
+.fill-gold{background:goldenrod;}
+
+.score-bar-val{
+ width:40px;
+ text-align:right;
+}
+
+.ai-chip{
+ background:teal;
+ color:white;
+ padding:20px;
+ border-radius:15px;
+}
+
+/* CTA */
+.cta-section{
+ background:teal;
+ color:white;
+ text-align:center;
+ padding:70px 20px;
+}
+
+.cta-section h2{
+ font-size:42px;
+ margin-bottom:15px;
+}
+
+.cta-section p{
+ margin-bottom:25px;
+}
+
+.btn-white{
+ background:white;
+ color:teal;
+ font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+ padding:25px;
+ text-align:center;
+ color:#666;
+ background:white;
+ border-top:1px solid #ddd;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+ .hero{
+  grid-template-columns:1fr;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<a href="/" class="logo">Admit<span>IQ</span></a>
+
+<div class="nav-links">
+<a href="/login">Admin</a>
+<a href="/form" class="btn-nav">Apply Now</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+<div>
+
+<div class="hero-badge">AI Powered Admission Intelligence</div>
+
+<h1>
+Screen Smarter.<br>
+<em>Admit</em> <span class="line2">Better.</span>
+</h1>
+
+<p class="hero-sub">
+A smart college admission system that checks student marks,
+exam scores and eligibility using machine learning.
+Get instant result and best course recommendation.
+</p>
+
+<div class="hero-cta">
+<a href="/form" class="btn-primary">Start Application</a>
+<a href="#cta" class="btn-secondary">Learn More</a>
+</div>
+
+<div class="stats-strip">
+
+<div class="stat">
+<div class="stat-num">93%</div>
+<div class="stat-label">Model Accuracy</div>
+</div>
+
+<div class="stat">
+<div class="stat-num">6</div>
+<div class="stat-label">Courses Available</div>
+</div>
+
+<div class="stat">
+<div class="stat-num">&lt;1s</div>
+<div class="stat-label">Result Time</div>
+</div>
+
+</div>
+</div>
+
+<!-- RIGHT SIDE -->
+<div class="hero-visual">
+
+<div class="score-card">
+
+<div class="score-card-header">
+<div>Kalyani Sutar - AIML</div>
+<div class="badge-admit">Admitted</div>
+</div>
+
+<div class="score-bar-row">
+<div class="score-bar-label">10th</div>
+<div class="score-bar-track"><div class="score-bar-fill fill-teal" style="width:88%"></div></div>
+<div class="score-bar-val">84%</div>
+</div>
+
+<div class="score-bar-row">
+<div class="score-bar-label">12th</div>
+<div class="score-bar-track"><div class="score-bar-fill fill-gold" style="width:91%"></div></div>
+<div class="score-bar-val">78%</div>
+</div>
+
+<div class="score-bar-row">
+<div class="score-bar-label">Entrance</div>
+<div class="score-bar-track"><div class="score-bar-fill fill-teal" style="width:84%"></div></div>
+<div class="score-bar-val">72</div>
+</div>
+
+</div>
+
+<div class="score-card">
+
+<div class="score-card-header">
+<div>Rahul Verma - Civil</div>
+<div class="badge-reject">Rejected</div>
+</div>
+
+<div class="score-bar-row">
+<div class="score-bar-label">10th</div>
+<div class="score-bar-track"><div class="score-bar-fill fill-red" style="width:48%"></div></div>
+<div class="score-bar-val">48%</div>
+</div>
+
+<div class="score-bar-row">
+<div class="score-bar-label">12th</div>
+<div class="score-bar-track"><div class="score-bar-fill fill-red" style="width:52%"></div></div>
+<div class="score-bar-val">52%</div>
+</div>
+
+<div class="score-bar-row">
+<div class="score-bar-label">Entrance</div>
+<div class="score-bar-track"><div class="score-bar-fill fill-red" style="width:38%"></div></div>
+<div class="score-bar-val">38</div>
+</div>
+
+</div>
+
+<div class="ai-chip">
+<b>AI Recommendation</b><br>
+Matched to Artificial Intelligence and Machine Learning with 96% confidence
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+<h2>Ready to check your eligibility?</h2>
+<p>Fill your academic details and get instant AI admission result.</p>
+<a href="/form" class="btn-white">Start Your Application</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div><b>AdmitIQ</b> - AI College Admission System</div>
+<div>Built with Flask, Machine Learning, SQLite</div>
+</footer>
+
+</body>
+</html>

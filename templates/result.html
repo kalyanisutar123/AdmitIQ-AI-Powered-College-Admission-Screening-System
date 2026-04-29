@@ -1,0 +1,389 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Result — AdmitIQ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#0a0a0f;
+  --paper:#f5f2eb;
+  --gold:#c8a84b;
+  --teal:#1a6b6b;
+  --muted:#5a5a6a;
+  --border:#e0ddd4;
+  --green:#1a6b1a;
+  --red:#c84b4b;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+}
+.logo{
+  font-family:'Syne',sans-serif;
+  font-size:28px;
+  font-weight:800;
+}
+.logo span{
+  color:var(--gold);
+}
+.nav-right{
+  display:flex;
+  gap:10px;
+}
+.nav-right a{
+  text-decoration:none;
+  padding:10px 18px;
+  border-radius:30px;
+  font-size:14px;
+  border:1px solid var(--border);
+  color:var(--ink);
+}
+.primary{
+  background:var(--ink);
+  color:#fff !important;
+}
+
+/* PAGE */
+.page-wrap{
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* RESULT */
+.verdict-card{
+  border-radius:22px;
+  padding:40px;
+  text-align:center;
+  color:#fff;
+  margin-bottom:25px;
+}
+.admitted{
+  background:linear-gradient(135deg,#0f6b4b,#1a6b6b);
+}
+.rejected{
+  background:linear-gradient(135deg,#7a1a1a,#c84b4b);
+}
+.verdict-icon{
+  font-size:60px;
+  margin-bottom:15px;
+}
+.verdict-name{
+  font-size:14px;
+  letter-spacing:2px;
+  opacity:.8;
+  text-transform:uppercase;
+}
+.verdict-title{
+  font-family:'Syne',sans-serif;
+  font-size:38px;
+  font-weight:800;
+  margin:10px 0;
+}
+.verdict-sub{
+  max-width:650px;
+  margin:auto;
+  line-height:1.7;
+}
+.verdict-conf{
+  margin-top:18px;
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:50px;
+  background:rgba(255,255,255,.15);
+  font-weight:600;
+}
+
+/* COURSE */
+.course-card{
+  background:#fff;
+  border:2px solid var(--gold);
+  padding:25px;
+  border-radius:18px;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  margin-bottom:25px;
+}
+.course-icon{
+  width:70px;
+  height:70px;
+  border-radius:16px;
+  background:linear-gradient(135deg,var(--teal),#2a9090);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  color:#fff;
+}
+.course-label{
+  font-size:13px;
+  color:var(--muted);
+}
+.course-name{
+  font-family:'Syne',sans-serif;
+  font-size:28px;
+  color:var(--teal);
+  font-weight:800;
+}
+.course-desc{
+  margin-top:6px;
+  color:var(--muted);
+}
+
+/* SCORES */
+.scores-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-bottom:25px;
+}
+.score-tile{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:25px;
+  text-align:center;
+}
+.score-tile-val{
+  font-family:'Syne',sans-serif;
+  font-size:38px;
+  font-weight:800;
+}
+.green{color:green;}
+.gold{color:#c8a84b;}
+.teal{color:#1a6b6b;}
+
+/* DETAILS */
+.detail-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  margin-bottom:25px;
+}
+.detail-item{
+  background:#fff;
+  border:1px solid var(--border);
+  padding:16px;
+  border-radius:12px;
+  display:flex;
+  justify-content:space-between;
+}
+.detail-key{
+  color:var(--muted);
+}
+.detail-val{
+  font-weight:700;
+}
+
+/* BUTTONS */
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.btn-action{
+  text-decoration:none;
+  padding:12px 20px;
+  border-radius:40px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+.btn-dark{
+  background:#000;
+  color:#fff;
+}
+.btn-outline{
+  background:#fff;
+  border:1px solid var(--border);
+}
+
+@media(max-width:768px){
+  .scores-row,
+  .detail-grid{
+    grid-template-columns:1fr;
+  }
+  .course-card{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Admit<span>IQ</span></div>
+
+  <div class="nav-right">
+    <a href="/form">New Application</a>
+    <a href="/" class="primary">Home</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+<!-- RESULT -->
+<div id="verdictCard" class="verdict-card admitted">
+  <div id="icon" class="verdict-icon">🎉</div>
+  <div class="verdict-name" id="studentName">Student Name</div>
+  <div class="verdict-title" id="resultTitle">Congratulations! You Are Eligible</div>
+  <div class="verdict-sub" id="resultSub">
+    Your academic profile meets the admission criteria.
+  </div>
+  <div class="verdict-conf" id="confidenceBox">AI Confidence: 92%</div>
+</div>
+
+<!-- COURSE -->
+<div class="course-card">
+  <div class="course-icon">🎓</div>
+  <div>
+    <div class="course-label">Recommended Course</div>
+    <div class="course-name" id="courseName">Computer Science</div>
+    <div class="course-desc">This course matches your academic profile.</div>
+  </div>
+</div>
+
+<!-- SCORES -->
+<div class="scores-row">
+  <div class="score-tile">
+    <div class="score-tile-val green" id="m10">0%</div>
+    <div>10th Grade</div>
+  </div>
+
+  <div class="score-tile">
+    <div class="score-tile-val gold" id="m12">0%</div>
+    <div>12th Grade</div>
+  </div>
+
+  <div class="score-tile">
+    <div class="score-tile-val teal" id="ent">0</div>
+    <div>Entrance Score</div>
+  </div>
+</div>
+
+<!-- DETAILS -->
+<div class="detail-grid">
+  <div class="detail-item">
+    <span class="detail-key">Name</span>
+    <span class="detail-val" id="dName">-</span>
+  </div>
+
+  <div class="detail-item">
+    <span class="detail-key">Age</span>
+    <span class="detail-val" id="dAge">-</span>
+  </div>
+
+  <div class="detail-item">
+    <span class="detail-key">Gender</span>
+    <span class="detail-val" id="dGender">-</span>
+  </div>
+
+  <div class="detail-item">
+    <span class="detail-key">Preferred Course</span>
+    <span class="detail-val" id="dPref">-</span>
+  </div>
+
+  <div class="detail-item">
+    <span class="detail-key">Decision</span>
+    <span class="detail-val" id="dDecision">-</span>
+  </div>
+
+  <div class="detail-item">
+    <span class="detail-key">Confidence</span>
+    <span class="detail-val" id="dConf">-</span>
+  </div>
+</div>
+
+<!-- ACTIONS -->
+<div class="actions">
+  <a href="/form" class="btn-action btn-dark">← Apply Again</a>
+  <button onclick="window.print()" class="btn-action btn-outline">🖨 Print</button>
+  <a href="/" class="btn-action btn-outline">Home</a>
+</div>
+
+</div>
+
+<script>
+/* Get result from localStorage */
+let data = JSON.parse(localStorage.getItem("studentResult"));
+
+if(data){
+
+  document.getElementById("studentName").innerText = data.name;
+  document.getElementById("dName").innerText = data.name;
+  document.getElementById("dAge").innerText = data.age;
+  document.getElementById("dGender").innerText = data.gender;
+
+  document.getElementById("courseName").innerText =
+      data.recommended_course || data.course;
+
+  document.getElementById("dPref").innerText =
+      data.recommended_course || data.course;
+
+  document.getElementById("m10").innerText = data.marks10 + "%";
+  document.getElementById("m12").innerText = data.marks12 + "%";
+  document.getElementById("ent").innerText = data.entrance;
+
+  let avg = (parseFloat(data.marks10) +
+             parseFloat(data.marks12) +
+             parseFloat(data.entrance)) / 3;
+
+  let admitted = avg >= 60;
+
+  if(admitted){
+      document.getElementById("dDecision").innerText = "Admitted";
+      document.getElementById("icon").innerText = "🎉";
+  }else{
+      document.getElementById("verdictCard").classList.remove("admitted");
+      document.getElementById("verdictCard").classList.add("rejected");
+
+      document.getElementById("icon").innerText = "❌";
+      document.getElementById("resultTitle").innerText =
+        "Application Not Successful";
+
+      document.getElementById("resultSub").innerText =
+        "Your scores are below eligibility criteria.";
+
+      document.getElementById("dDecision").innerText = "Rejected";
+  }
+
+  let conf = Math.round(avg);
+
+  document.getElementById("confidenceBox").innerText =
+      "AI Confidence: " + conf + "%";
+
+  document.getElementById("dConf").innerText = conf + "%";
+
+}else{
+  alert("No student data found. Please submit form first.");
+  window.location.href = "/form";
+}
+</script>
+
+</body>
+</html>

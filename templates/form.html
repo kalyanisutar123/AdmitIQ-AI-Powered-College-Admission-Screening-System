@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply - AdmitIQ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --ink:#0a0a0f;
+ --paper:#f5f2eb;
+ --gold:#c8a84b;
+ --teal:#1a6b6b;
+ --muted:#5a5a6a;
+ --border:#e0ddd4;
+ --card:#ffffff;
+ --error:#c84b4b;
+}
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+body{
+ font-family:'DM Sans',sans-serif;
+ background:var(--paper);
+ color:var(--ink);
+}
+
+/* NAVBAR */
+nav{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:20px 40px;
+ background:#fff;
+ border-bottom:1px solid var(--border);
+}
+
+.logo{
+ font-size:28px;
+ font-weight:800;
+ font-family:'Syne',sans-serif;
+ text-decoration:none;
+ color:#000;
+}
+
+.logo span{
+ color:var(--gold);
+}
+
+.nav-back{
+ text-decoration:none;
+ color:var(--muted);
+ font-size:14px;
+}
+
+/* PAGE */
+.page-wrap{
+ max-width:950px;
+ margin:auto;
+ padding:40px 20px;
+}
+
+.page-header{
+ text-align:center;
+ margin-bottom:30px;
+}
+
+.page-badge{
+ display:inline-block;
+ padding:8px 16px;
+ border-radius:30px;
+ background:#eef5f5;
+ color:var(--teal);
+ font-size:14px;
+ margin-bottom:15px;
+}
+
+.page-header h1{
+ font-size:42px;
+ font-family:'Syne',sans-serif;
+ margin-bottom:10px;
+}
+
+.page-sub{
+ color:var(--muted);
+}
+
+/* CARD */
+.form-card{
+ background:#fff;
+ border-radius:20px;
+ padding:35px;
+ box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.section-label{
+ font-size:20px;
+ font-family:'Syne',sans-serif;
+ color:var(--teal);
+ margin:25px 0 15px;
+}
+
+.form-grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:20px;
+}
+
+.form-group{
+ display:flex;
+ flex-direction:column;
+}
+
+label{
+ margin-bottom:8px;
+ font-size:14px;
+}
+
+input,select{
+ padding:13px;
+ border:1px solid #ccc;
+ border-radius:12px;
+ font-size:15px;
+ outline:none;
+}
+
+input:focus,select:focus{
+ border-color:var(--teal);
+}
+
+.req{
+ color:red;
+}
+
+/* ERRORS */
+.field-err{
+ font-size:12px;
+ color:red;
+ margin-top:5px;
+ display:none;
+}
+
+.field-err.show{
+ display:block;
+}
+
+/* BUTTON */
+.submit-area{
+ margin-top:35px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:20px;
+ flex-wrap:wrap;
+}
+
+.submit-note{
+ color:var(--muted);
+ font-size:13px;
+ max-width:320px;
+}
+
+.btn-submit{
+ background:#000;
+ color:#fff;
+ border:none;
+ padding:14px 28px;
+ border-radius:50px;
+ cursor:pointer;
+ font-size:16px;
+ font-weight:600;
+}
+
+.btn-submit:hover{
+ background:var(--teal);
+}
+
+@media(max-width:768px){
+ .form-grid{
+  grid-template-columns:1fr;
+ }
+
+ nav{
+  padding:15px 20px;
+ }
+
+ .page-header h1{
+  font-size:32px;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<a href="/" class="logo">Admit<span>IQ</span></a>
+<a href="/" class="nav-back">← Back to Home</a>
+</nav>
+
+<!-- PAGE -->
+<div class="page-wrap">
+
+<div class="page-header">
+<div class="page-badge">Student Portal</div>
+<h1>Admission Form</h1>
+<p class="page-sub">Enter your details to get AI-based admission decision</p>
+</div>
+
+<div class="form-card">
+
+<!-- PERSONAL -->
+<div class="section-label">Personal Information</div>
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Full Name <span class="req">*</span></label>
+<input type="text" id="name" placeholder="Kalyani Sutar">
+<div class="field-err" id="err-name">Enter name</div>
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input type="email" id="email" placeholder="kalyani@email.com">
+</div>
+
+<div class="form-group">
+<label>Age <span class="req">*</span></label>
+<input type="number" id="age" placeholder="21">
+<div class="field-err" id="err-age">Enter valid age</div>
+</div>
+
+<div class="form-group">
+<label>Gender <span class="req">*</span></label>
+<select id="gender">
+<option value="">Select</option>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+<div class="field-err" id="err-gender">Select gender</div>
+</div>
+
+</div>
+
+<!-- ACADEMIC -->
+<div class="section-label">Academic Scores</div>
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>10th Percentage <span class="req">*</span></label>
+<input type="number" id="marks_10" placeholder="84">
+<div class="field-err" id="err-10">Enter 0 to 100</div>
+</div>
+
+<div class="form-group">
+<label>12th Percentage <span class="req">*</span></label>
+<input type="number" id="marks_12" placeholder="78">
+<div class="field-err" id="err-12">Enter 0 to 100</div>
+</div>
+
+<div class="form-group">
+<label>Entrance Score <span class="req">*</span></label>
+<input type="number" id="entrance" placeholder="72">
+<div class="field-err" id="err-ent">Enter 0 to 100</div>
+</div>
+
+<div class="form-group">
+<label>Preferred Course <span class="req">*</span></label>
+<select id="course">
+<option value="">Select Course</option>
+<option>Computer Science</option>
+<option>Artificial Intelligence and Machine Learning</option>
+<option>Electronics</option>
+<option>Mechanical Engineering</option>
+<option>Civil Engineering</option>
+<option>Biotechnology</option>
+<option>Business Administration</option>
+</select>
+<div class="field-err" id="err-course">Select course</div>
+</div>
+
+</div>
+
+<!-- BUTTON -->
+<div class="submit-area">
+<p class="submit-note">Your data is secure and used only for admission process.</p>
+<button class="btn-submit" onclick="submitForm()">Get AI Decision</button>
+</div>
+
+</div>
+</div>
+
+<script>
+function showErr(id, show){
+ document.getElementById("err-" + id).classList.toggle("show", show);
+}
+
+function validate(){
+
+ let ok = true;
+
+ let name = document.getElementById("name").value.trim();
+ let age = document.getElementById("age").value;
+ let gender = document.getElementById("gender").value;
+ let m10 = document.getElementById("marks_10").value;
+ let m12 = document.getElementById("marks_12").value;
+ let ent = document.getElementById("entrance").value;
+ let course = document.getElementById("course").value;
+
+ if(!name){showErr("name",true); ok=false;} else showErr("name",false);
+
+ if(age==="" || age<15 || age>30){showErr("age",true); ok=false;}
+ else showErr("age",false);
+
+ if(!gender){showErr("gender",true); ok=false;}
+ else showErr("gender",false);
+
+ if(m10==="" || m10<0 || m10>100){showErr("10",true); ok=false;}
+ else showErr("10",false);
+
+ if(m12==="" || m12<0 || m12>100){showErr("12",true); ok=false;}
+ else showErr("12",false);
+
+ if(ent==="" || ent<0 || ent>100){showErr("ent",true); ok=false;}
+ else showErr("ent",false);
+
+ if(!course){showErr("course",true); ok=false;}
+ else showErr("course",false);
+
+ return ok;
+}
+
+async function submitForm(){
+
+ if(!validate()) return;
+
+ let payload = {
+   name: document.getElementById("name").value,
+   email: document.getElementById("email").value,
+   age: document.getElementById("age").value,
+   gender: document.getElementById("gender").value,
+   marks_10: document.getElementById("marks_10").value,
+   marks_12: document.getElementById("marks_12").value,
+   entrance_score: document.getElementById("entrance").value,
+   preferred_course: document.getElementById("course").value
+ };
+
+ try{
+
+   let res = await fetch("/predict",{
+     method:"POST",
+     headers:{
+       "Content-Type":"application/json"
+     },
+     body:JSON.stringify(payload)
+   });
+
+   let data = await res.json();
+
+   if(data.success){
+
+      /* SAVE RESULT FOR result.html */
+      localStorage.setItem("studentResult", JSON.stringify({
+        name: payload.name,
+        age: payload.age,
+        gender: payload.gender,
+        course: payload.preferred_course,
+        marks10: payload.marks_10,
+        marks12: payload.marks_12,
+        entrance: payload.entrance_score,
+        admitted: data.result.admitted,
+        confidence: data.result.confidence
+      }));
+
+      window.location.href="/result";
+
+   }else{
+      alert(data.error);
+   }
+
+ }catch(error){
+   alert("Server not running");
+ }
+
+}
+</script>
+
+</body>
+</html>

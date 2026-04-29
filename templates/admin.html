@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - AdmitIQ</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+
+<style>
+:root{
+ --ink:#0a0a0f;
+ --paper:#f5f2eb;
+ --gold:#c8a84b;
+ --teal:#1a6b6b;
+ --muted:#5a5a6a;
+ --border:#e0ddd4;
+ --card:#ffffff;
+ --green:#1a6b1a;
+ --red:#c84b4b;
+ --sidebar:#0d1117;
+}
+
+body{
+ font-family:'DM Sans',sans-serif;
+ background:var(--paper);
+ color:var(--ink);
+ display:flex;
+ min-height:100vh;
+ margin:0;
+}
+
+/* Sidebar */
+.sidebar{
+ width:240px;
+ background:var(--sidebar);
+ color:#fff;
+ padding:1.5rem;
+ display:flex;
+ flex-direction:column;
+}
+
+.nav-item{
+ display:block;
+ padding:10px;
+ color:#fff;
+ text-decoration:none;
+ border-radius:8px;
+ margin-bottom:8px;
+}
+
+.nav-item:hover{
+ background:#222;
+}
+
+.active{
+ background:#333;
+ color:var(--gold);
+}
+
+/* Main */
+.main{
+ flex:1;
+ padding:2rem;
+}
+
+.topbar{
+ display:flex;
+ justify-content:space-between;
+ margin-bottom:2rem;
+}
+
+.topbar-title{
+ font-size:1.6rem;
+ font-weight:bold;
+}
+
+/* Cards */
+.stat-cards{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:1rem;
+ margin-bottom:2rem;
+}
+
+.stat-card{
+ background:#fff;
+ padding:20px;
+ border-radius:15px;
+ border:1px solid #ddd;
+}
+
+.stat-card-label{
+ font-size:13px;
+ color:gray;
+}
+
+.stat-card-val{
+ font-size:30px;
+ font-weight:bold;
+}
+
+.val-green{color:green;}
+.val-red{color:red;}
+.val-teal{color:teal;}
+
+/* Charts */
+.chart-row{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:1rem;
+ margin-bottom:2rem;
+}
+
+.chart-card{
+ background:#fff;
+ padding:20px;
+ border-radius:15px;
+ border:1px solid #ddd;
+}
+
+/* Table */
+.table-card{
+ background:#fff;
+ border-radius:15px;
+ border:1px solid #ddd;
+ overflow:hidden;
+}
+
+.table-head{
+ display:flex;
+ justify-content:space-between;
+ padding:15px;
+}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+}
+
+th,td{
+ padding:10px;
+ border-bottom:1px solid #eee;
+ text-align:left;
+}
+
+.pill{
+ padding:4px 10px;
+ border-radius:20px;
+ font-size:12px;
+}
+
+.pill-green{
+ background:#d4f0d4;
+ color:green;
+}
+
+.pill-red{
+ background:#f0d4d4;
+ color:red;
+}
+
+.btn-del{
+ padding:5px 10px;
+ border:none;
+ background:red;
+ color:white;
+ cursor:pointer;
+ border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <h2>AdmitIQ</h2>
+  <a href="/admin" class="nav-item active">Dashboard</a>
+  <a href="/form" class="nav-item">New Application</a>
+  <a href="/logout" class="nav-item">Logout</a>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+<div class="topbar">
+  <div class="topbar-title">Admin Dashboard</div>
+  <div>admin</div>
+</div>
+
+<!-- Stats -->
+<div class="stat-cards">
+
+<div class="stat-card">
+<div class="stat-card-label">Total Applications</div>
+<div class="stat-card-val">250</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-card-label">Admitted</div>
+<div class="stat-card-val val-green">180</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-card-label">Rejected</div>
+<div class="stat-card-val val-red">70</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-card-label">Avg 12th Score</div>
+<div class="stat-card-val val-teal">78%</div>
+</div>
+
+</div>
+
+<!-- Charts -->
+<div class="chart-row">
+
+<div class="chart-card">
+<h3>Score Distribution</h3>
+<canvas id="scatterChart"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Course Allocation</h3>
+<canvas id="courseChart"></canvas>
+</div>
+
+</div>
+
+<div class="chart-card" style="margin-bottom:2rem;">
+<h3>Admission vs Rejection</h3>
+<canvas id="barChart"></canvas>
+</div>
+
+<!-- Table -->
+<div class="table-card">
+
+<div class="table-head">
+<h3>All Applications</h3>
+<input type="text" id="tableSearch" placeholder="Search..." onkeyup="filterTable()">
+</div>
+
+<table id="studentsTable">
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Age</th>
+<th>10th</th>
+<th>12th</th>
+<th>Entrance</th>
+<th>Preferred</th>
+<th>Recommended</th>
+<th>Status</th>
+<th>Date</th>
+<th>Delete</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr id="row-1">
+<td>1</td>
+<td>Rahul</td>
+<td>18</td>
+<td>85%</td>
+<td>88%</td>
+<td>90</td>
+<td>Computer Science</td>
+<td>Computer Science</td>
+<td><span class="pill pill-green">Admitted</span></td>
+<td>2026-04-18</td>
+<td><button class="btn-del" onclick="deleteStudent(1)">X</button></td>
+</tr>
+
+<tr id="row-2">
+<td>2</td>
+<td>Priya</td>
+<td>19</td>
+<td>60%</td>
+<td>58%</td>
+<td>55</td>
+<td>Mechanical</td>
+<td>Mechanical</td>
+<td><span class="pill pill-red">Rejected</span></td>
+<td>2026-04-18</td>
+<td><button class="btn-del" onclick="deleteStudent(2)">X</button></td>
+</tr>
+
+<tr id="row-3">
+<td>3</td>
+<td>kalyani</td>
+<td>21</td>
+<td>84%</td>
+<td>78%</td>
+<td>72</td>
+<td>Artificial Intelligence and Machine Learning</td>
+<td>Artificial Intelligence and Machine Learning</td>
+<td><span class="pill pill-green">Admitted</span></td>
+<td>2026-04-18</td>
+<td><button class="btn-del" onclick="deleteStudent(3)">X</button></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<script>
+// Bar Chart
+new Chart(document.getElementById("barChart"),{
+type:"bar",
+data:{
+labels:["Admitted","Rejected"],
+datasets:[{
+data:[180,70]
+}]
+}
+});
+
+// Pie Chart
+new Chart(document.getElementById("courseChart"),{
+type:"doughnut",
+data:{
+labels:["CS","Mechanical","Civil", "Artificial Intelligence and Machine Learning", "Electronics", "Biotech", "Business"],
+datasets:[{
+data:[100,80,70, 50, 30, 20, 10]
+}]
+}
+});
+
+// Scatter Chart
+new Chart(document.getElementById("scatterChart"),{
+type:"scatter",
+data:{
+datasets:[{
+label:"Students",
+data:[
+{x:85,y:88},
+{x:60,y:58},
+{x:90,y:95}
+]
+}]
+}
+});
+
+// Search
+function filterTable(){
+let input=document.getElementById("tableSearch").value.toLowerCase();
+let rows=document.querySelectorAll("#studentsTable tbody tr");
+
+rows.forEach(row=>{
+row.style.display=row.innerText.toLowerCase().includes(input)?"":"none";
+});
+}
+
+// Delete
+function deleteStudent(id){
+document.getElementById("row-"+id).remove();
+}
+</script>
+
+</body>
+</html>
